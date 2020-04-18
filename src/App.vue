@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <h1>hello</h1>
-    <h2>{{characters[0]}}</h2>
+    <character-filter-form :characters="characters" />
   </div>
 </template>
 
 <script>
 import { eventBus } from './main.js'
+import CharacterListForm from './components/CharacterListForm.vue'
 
 export default {
   name: 'app',
@@ -26,6 +26,7 @@ export default {
     })
   },
   components: {
+    "character-filter-form": CharacterListForm
   }
 }
 </script>
