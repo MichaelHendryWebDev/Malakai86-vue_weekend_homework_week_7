@@ -1,19 +1,25 @@
 <template>
+  <body>
+
   <div id="app">
     <character-filter-form :characters="characters" />
+    <character-detail />
   </div>
+</body>
+
 </template>
 
 <script>
 import { eventBus } from './main.js'
 import CharacterListForm from './components/CharacterListForm.vue'
+import CharacterDetail from './components/CharacterDetail.vue'
 
 export default {
   name: 'app',
   data(){
     return {
-      characters: [],
-      selectedCharacter: null
+      characters: []
+      // selectedCharacter: null
     };
   },
   mounted(){
@@ -26,7 +32,8 @@ export default {
     })
   },
   components: {
-    "character-filter-form": CharacterListForm
+    "character-filter-form": CharacterListForm,
+    "character-detail": CharacterDetail
   }
 }
 </script>
@@ -41,5 +48,9 @@ div {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  background-color: black;
 }
 </style>
